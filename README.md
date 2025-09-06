@@ -11,6 +11,19 @@ Round 2 Technical Challenge: A simple, provider-agnostic web app that helps gene
 
 ---
 
+## ✨ Features  
+
+- 👋 **Warm Welcome** – The bot sends an **introductory message** on startup to avoid cold starts for new (and especially kid) users.  
+- ⌨️ **Kid-Friendly Commands** – Simple and easy command lines designed for children to **learn & explore** without confusion.  
+- 💬 **Conversational Flow** – An interactive, chat-like mechanism that makes generating videos feel like talking to a friend.  
+- 🧑‍🏫 **Friendly Prompt Optimizer** – Gently guides kids to improve their prompts ✍️ while ensuring video quality stays top-notch.  
+- 🔔 **Periodic Notifications** – Timely reminders encourage kids to **come back daily**, boosting engagement & retention.  
+- ❤️ **Simple Feedback Loop** – Kids can share opinions 👍👎 easily, and their feedback gets fed back into improvements.  
+- 🎬 **WhatsApp-Ready Videos** – Automatic **video compression with FFmpeg** keeps files under WhatsApp’s 16 MB limit.  
+- ⚡ **Smart Performance** – Built-in **queueing, cache retrieval, and error handling** ensure a smooth, lag-free experience.  
+
+---
+
 ## 📂 Project Structure
 
 ```bash
