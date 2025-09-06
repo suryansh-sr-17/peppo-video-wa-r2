@@ -97,10 +97,10 @@ Round 2 Technical Challenge: A simple, provider-agnostic web app that helps gene
 >
 > ![Create a Twilio account with your email id and verify it with your phone number](https://github.com/user-attachments/assets/11e9e4ea-91d3-4040-b6aa-b477ba736381)
 >
-> ![Copy your Account SID and Auth Token from the Dashboard and add it to your .env file](src/2.png)
+> ![Copy your Account SID and Auth Token from the Dashboard and add it to your .env file](https://github.com/user-attachments/assets/a8c4e106-db56-4979-8739-c61aaf383c6e)
 >
-> ![Scan the QR code and then use your code to gain access to your Twilio Whatsapp Sandbox](src/3.png)
+> ![Scan the QR code and then use your code to gain access to your Twilio Whatsapp Sandbox](https://github.com/user-attachments/assets/98f3b4ba-1d7c-43ee-86c0-a8e5118b098b)
 >
-> ![Expose your FAST API port using **ngrok** and use it's "/webhook/whatsapp" endpoint for POST operations](src/4.png)
+> ![Expose your FAST API port using **ngrok** and use it's "/webhook/whatsapp" endpoint for POST operations](https://github.com/user-attachments/assets/5e296e92-bf2d-4689-9659-3494ab543b19)
 
 ---
