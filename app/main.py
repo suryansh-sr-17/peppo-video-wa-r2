@@ -48,7 +48,7 @@ async def lifespan(app: FastAPI):
             intro_msg = (
                 "👋 Hello! I’m Peppo AI Video Bot.\n\n"
                 "Send me a text prompt and I’ll turn it into a video 🎥✨\n"
-                "Type /help anytime to see what I can do."
+                "Type /guide anytime to see what I can do."
             )
             # schedule async send
             asyncio.create_task(_send_intro(dev_number, intro_msg))
