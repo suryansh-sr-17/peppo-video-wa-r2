@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Peppo AI – Prompt → Video</title>
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  <style>
+    body {
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: "Poppins", sans-serif;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      background: linear-gradient(90deg, #ff7eb3, #65c7f7, #0052d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 6s linear infinite;
+    }
+
+    @keyframes shine {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card { 
+      padding: 2rem; 
+      border-radius: 18px; 
+      box-shadow: 0 8px 24px rgba(0,0,0,.15); 
+      background: #fff; 
+      max-width: 700px;
+      margin: auto;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      resize: vertical;
+      font-size: 1rem;
+      padding: .9rem;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+    }
+
+    select {
+      width: 100%;
+      padding: .9rem 1rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 14px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 1.05rem;
+      display: block;
+      margin-bottom: .5rem;
+      color: #444;
+    }
+
+    .muted { opacity: .7; font-size: .9rem; }
+
+    .loading-bar {
+      width: 100%;
+      height: 6px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: .5rem;
+      display: none;
+    }
+
+    .loading-bar div {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      animation: loading 2s infinite;
+    }
+
+    @keyframes loading {
+      0% { width: 0; }
+      50% { width: 80%; }
+      100% { width: 0; }
+    }
+
+    #result {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    #download-section {
+      margin-top: 1rem;
+    }
+
+    #download-section p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: .5rem;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<header><h1>Peppo AI – Text to Video App</h1></header>
+<main>
+  <section class="card">
+    <label for="prompt">✨ Type what you wish to see 📽️</label>
+    <textarea id="prompt" placeholder="A small robot watering a bonsai on a windowsill at sunset"></textarea>
+
+    <label for="style">🎨 Choose your style 🌟</label>
+    <select id="style">
+      <option value="cinematic">Cinematic</option>
+      <option value="anime">Anime</option>
+      <option value="product">Product</option>
+    </select>
+
+    <button id="optimize">✨ Optimize your prompt 🌸</button>
+    <textarea id="optimized-output" readonly placeholder="Optimized prompt will appear here..." style="margin-top:1rem;display:none;"></textarea>
+
+    <button id="go">⚡ Generate</button>
+
+    <p class="muted">💡 Tip: Try action verbs + camera moves (e.g., “slow dolly, soft lighting”).</p>
+    <div id="status" style="margin-top:1rem;"></div>
+    <div class="loading-bar"><div></div></div>
+    <div id="result"></div>
+  </section>
+</main>
+<script>
+async function generate() {
+  let prompt = document.getElementById('optimized-output').value.trim();
+  if (!prompt) {
+    // fallback if optimized section is empty
+    prompt = document.getElementById('prompt').value.trim();
+  }
+
+  const style = document.getElementById('style').value;
+  if (!prompt) { alert("Please enter a prompt"); return; }
+
+  setStatus("Submitting…");
+  toggleLoading(true);
+
+  const res = await fetch('/generate', {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({prompt, style})
+  });
+  const data = await res.json();
+  if (!data.job_id) { setStatus("Error submitting job."); toggleLoading(false); return; }
+
+  if (data.status === 'succeeded' && data.video_url) {
+    setStatus("🧠Cached result ready⏳");
+    showVideo(data.video_url);
+    toggleLoading(false);
+    return;
+  }
+  setStatus("Generating Video… please wait 😇");
+  poll(data.job_id);
+}
+
+function setStatus(text) {
+  document.getElementById('status').innerText = text;
+}
+
+function toggleLoading(show) {
+  document.querySelector('.loading-bar').style.display = show ? 'block' : 'none';
+}
+
+function showVideo(url) {
+  const resultDiv = document.getElementById('result');
+  const videoId = Date.now().toString(); // simple unique ID for feedback logging
+
+  resultDiv.innerHTML = `
+    <p class="fade-in">Done ✔️</p>
+    <video controls autoplay loop class="fade-in" style="width:100%;max-width:720px;border-radius:12px;margin-top:1rem;box-shadow:0 6px 18px rgba(0,0,0,0.2);">
+      <source src="${url}" type="video/mp4">
+    </video>
+    <div id="download-section" class="fade-in">
+      <p>🎬 Liked this video ? Why not keep it with you 😉</p>
+      <a href="${url}" download="peppo-video.mp4">
+        <button>⬇️ Download Video</button>
+      </a>
+    </div>
+    <div id="feedback-section" class="fade-in" style="margin-top:1rem;">
+      <p>👍 Did you like this generation?</p>
+      <div id="feedback-buttons">
+        <button onclick="sendFeedback('${videoId}', true)">👍 Yes</button>
+        <button onclick="sendFeedback('${videoId}', false)">👎 No</button>
+      </div>
+      <p id="feedback-msg" style="margin-top:.5rem;color:#444;"></p>
+    </div>
+  `;
+}
+
+async function poll(jobId) {
+  const interval = setInterval(async () => {
+    const r = await fetch(`/status/${jobId}`);
+    const d = await r.json();
+    if (d.status === 'succeeded' && d.video_url) {
+      clearInterval(interval);
+      setStatus(d.cached ? "Done (from cache) ✓" : "");
+      toggleLoading(false);
+      showVideo(d.video_url);
+    } else if (d.status === 'failed') {
+      clearInterval(interval);
+      toggleLoading(false);
+      setStatus("Generation failed" + (d.error ? `: ${d.error}` : ""));
+    }
+  }, 1500);
+}
+
+document.getElementById('go').addEventListener('click', generate);
+
+document.getElementById('optimize').addEventListener('click', async () => {
+  const prompt = document.getElementById('prompt').value.trim();
+  const style = document.getElementById('style').value;
+  if (!prompt) { alert("Please enter a prompt first"); return; }
+
+  setStatus("Optimizing prompt…");
+  const res = await fetch('/optimize_prompt', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ prompt, style })
+  });
+  const data = await res.json();
+
+  const optimizedBox = document.getElementById('optimized-output');
+  optimizedBox.value = data.optimized_prompt;
+  optimizedBox.style.display = 'block';
+  setStatus("Prompt optimized ✔️");
+});
+
+
+async function sendFeedback(videoId, liked) {
+  // Disable buttons immediately
+  const feedbackButtons = document.getElementById('feedback-buttons');
+  if (feedbackButtons) feedbackButtons.style.display = "none";
+
+  // Send feedback request
+  const res = await fetch('/feedback', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ video_id: videoId, liked })
+  });
+
+  const data = await res.json();
+  document.getElementById('feedback-msg').innerText = "✅ Thank you for your feedback!";
+}
+
+</script>
+</body>
+</html>
