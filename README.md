@@ -70,8 +70,8 @@ Round 2 Technical Challenge: A simple, provider-agnostic web app that helps gene
 ## 📲 Phone Demo Screenshots  
 
 <p align="center">
-  <img src="(https://github.com/user-attachments/assets/e25fecb5-5662-4f68-a477-f0323881d28c)" alt="Screenshot 1" width="45%" />
-  <img src="(https://github.com/user-attachments/assets/d4311c45-05be-40df-94fd-e64ca507d53e)" alt="Screenshot 2" width="45%" />
+  <img src="https://github.com/user-attachments/assets/e25fecb5-5662-4f68-a477-f0323881d28c" alt="Screenshot 1" width="45%" />
+  <img src="https://github.com/user-attachments/assets/d4311c45-05be-40df-94fd-e64ca507d53e" alt="Screenshot 2" width="45%" />
 </p>
 
 <p align="center">
