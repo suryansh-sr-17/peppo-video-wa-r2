@@ -19,17 +19,29 @@
 
 ```bash
 .
-├── api/                      # API endpoint
-├── app/                      # Core application logic
-│   ├── providers/            # External provider integrations
-│   ├── services/             # Business logic and services
-│   ├── static/               # Static files
-│   ├── templates/            # HTML templates
-│   ├── main.py               # entrypoint
-│   └── user_feedback.txt     # For user feedback and development cycle
-├── .venv/                    # Virtual environment (ignored in git)
-├── .env.example              # Sample API Key configurations
-└── README.md                 # Project documentation
+|   .env.example            # Sample API Key and other configurations
+|   jobs.db                 # Video ID records database
+|   requests.db             # User requests queue database
+|   
++---api/                    # API endpoint
+|       
++---app/                    # Core application logic
+|   |   
+|   +---integrations/       # Twilio integration endpoint
+|   |           
+|   +---providers/          # External provider integrations 
+|   |           
+|   +---services/           # Business logic and services
+|   |           
+|   +---static/             # Static files
+|   |   |   
+|   |   \---compressed/     # Compressed file from ffmpeg operation   
+|   |           
+|   +---templates/          # HTML templates
+|   |       
+|   +---workers/            # Whatsapp bot actions endpoints
+|           
+\---scripts/                # Operation scripts
 ```
 
 ---
