@@ -69,17 +69,21 @@ Round 2 Technical Challenge: A simple, provider-agnostic web app that helps gene
 
 ---
 
-## 📲 Phone Demo Screenshots
+## 📲 Phone Demo Screenshots  
 
-> ![](src/1wa.jpg)
->
-> ![](src/2wa.jpg)
->
-> ![](src/3wa.jpg)
->
-> ![](src/4wa.jpg)
->
-> ![](src/5wa.jpg)
+<p align="center">
+  <img src="src/1wa.jpg" alt="Screenshot 1" width="45%" />
+  <img src="src/2wa.jpg" alt="Screenshot 2" width="45%" />
+</p>
+
+<p align="center">
+  <img src="src/3wa.jpg" alt="Screenshot 3" width="45%" />
+  <img src="src/4wa.jpg" alt="Screenshot 4" width="45%" />
+</p>
+
+<p align="center">
+  <img src="src/5wa.jpg" alt="Screenshot 5" width="45%" />
+</p>
 
 ---
 
