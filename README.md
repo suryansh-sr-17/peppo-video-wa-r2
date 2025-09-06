@@ -65,7 +65,7 @@ Round 2 Technical Challenge: A simple, provider-agnostic web app that helps gene
 
 ## 🌐 Demo Video:
 
-[![Watch the demo](src/thumbnail.png)](src/peppoai_demo.mp4)
+[![Watch the demo](src/1wa.jpg)](src/peppoai_demo.mp4)
 
 👉 Click the image above to watch the demo video!
 
