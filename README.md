@@ -1,6 +1,6 @@
 # 🎥 Peppo – AI-Powered Text to Video Generator Whatsapp Bot Integration
 
-Technical Challenge: A simple, provider-agnostic web app that helps generate **videos** from **text ideas** and **optimized prompts** using AI which is integrated into a **Whatsapp Bot** using **Twilio**  
+Round 2 Technical Challenge: A simple, provider-agnostic web app that helps generate **videos** from **text ideas** and **optimized prompts** using AI which is integrated into a **Whatsapp Bot** using **Twilio**  
 
 - ⚡ **FastAPI** backend
 - 🌐 **Twilio** integration framework
@@ -8,12 +8,6 @@ Technical Challenge: A simple, provider-agnostic web app that helps generate **v
 - 🗂️ Clear project structure with providers & services  
 - 🔑 **API key configurable** via `.env.example` (for api key configuration reference)  
 - 🌍 Accessible via twilio whatsapp sandbox  
-
----
-
-## 🌐 Demo Video:
-
-👉 Live App URL: [https://peppo-video-app-new.vercel.app/](https://peppo-video-app-new.vercel.app/)
 
 ---
 
@@ -56,6 +50,17 @@ Technical Challenge: A simple, provider-agnostic web app that helps generate **v
 
 ---
 
+## 🌐 Demo Video:
+
+👉 Live App URL: [https://peppo-video-app-new.vercel.app/](https://peppo-video-app-new.vercel.app/)
+
+---
+
+## 🌐 Demo Website:
+
+👉 Live App URL: [https://peppo-video-app-new.vercel.app/](https://peppo-video-app-new.vercel.app/)
+
+---
 ## ⚓ Twilio Account SetUp
 
 > **Guidelines**
