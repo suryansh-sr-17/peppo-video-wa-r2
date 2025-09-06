@@ -55,3 +55,17 @@ Technical Challenge: A simple, provider-agnostic web app that helps generate **v
 > ![Application Workflow](src/workflow.png)
 
 ---
+
+## ⚓ Twilio Account SetUp
+
+> **Guidelines**
+>
+> ![Create a Twilio account with your email id and verify it with your phone number](src/1.png)
+>
+> ![Copy your Account SID and Auth Token from the Dashboard and add it to your .env file](src/2.png)
+>
+> ![Scan the QR code and then use your code to gain access to your Twilio Whatsapp Sandbox](src/3.png)
+>
+> ![Expose your FAST API port using **ngrok** and use it's "/webhook/whatsapp" endpoint for POST operations](src/4.png)
+
+---
