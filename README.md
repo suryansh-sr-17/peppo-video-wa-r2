@@ -63,7 +63,7 @@ Round 2 Technical Challenge: A simple, provider-agnostic web app that helps gene
 
 ---
 
-## 🌐 Demo Video
+## 🌐 Demo Video (**Click on the Thumnail**)
 
 <p align="center">
   <a href="https://drive.google.com/file/d/1BOKV2pV-Y-rX3z3js2JW9vnbQHO1PPpg/view?usp=sharing" target="_blank">
