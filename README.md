@@ -52,6 +52,6 @@ Technical Challenge: A simple, provider-agnostic web app that helps generate **v
 
 > **Workflow Diagram**
 >
-> ![Application Workflow](workflow.png)
+> ![Application Workflow](src/workflow.png)
 
 ---
