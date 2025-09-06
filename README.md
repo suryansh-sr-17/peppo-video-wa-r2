@@ -95,7 +95,7 @@ Round 2 Technical Challenge: A simple, provider-agnostic web app that helps gene
 
 > **Guidelines**
 >
-> ![Create a Twilio account with your email id and verify it with your phone number](https://github.com/suryansh-sr-17/peppo-video-wa-r2/blob/main/src/1.png)
+> ![Create a Twilio account with your email id and verify it with your phone number](https://github.com/user-attachments/assets/11e9e4ea-91d3-4040-b6aa-b477ba736381)
 >
 > ![Copy your Account SID and Auth Token from the Dashboard and add it to your .env file](src/2.png)
 >
