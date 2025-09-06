@@ -65,7 +65,7 @@ Round 2 Technical Challenge: A simple, provider-agnostic web app that helps gene
 
 ## 🌐 Demo Video:
 
-👉 Live App URL: [https://peppo-video-app-new.vercel.app/](https://peppo-video-app-new.vercel.app/)
+<video src="src/peppoai_demo.mp4" controls="controls" width="600" />
 
 ---
 
