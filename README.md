@@ -56,11 +56,26 @@ Round 2 Technical Challenge: A simple, provider-agnostic web app that helps gene
 
 ---
 
+## 📲 Phone Demo Screenshots
+
+> ![](src/1wa.jpg)
+>
+> ![](src/2wa.jpg)
+>
+> ![](src/3wa.jpg)
+>
+> ![](src/4wa.jpg)
+>
+> ![](src/5wa.jpg)
+
+---
+
 ## 🌐 Demo Website:
 
 👉 Live App URL: [https://peppo-video-app-new.vercel.app/](https://peppo-video-app-new.vercel.app/)
 
 ---
+
 ## ⚓ Twilio Account SetUp
 
 > **Guidelines**
