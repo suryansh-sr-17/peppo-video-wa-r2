@@ -59,7 +59,7 @@ Round 2 Technical Challenge: A simple, provider-agnostic web app that helps gene
 
 > **Workflow Diagram**
 >
-> ![Application Workflow](src/workflow.png)
+> ![Application Workflow](https://github.com/user-attachments/assets/9cf80355-e685-4544-bfad-8f9a86f9c707)
 
 ---
 
@@ -71,16 +71,16 @@ Round 2 Technical Challenge: A simple, provider-agnostic web app that helps gene
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e25fecb5-5662-4f68-a477-f0323881d28c" alt="Screenshot 1" width="45%" />
-  <img src="https://github.com/user-attachments/assets/d4311c45-05be-40df-94fd-e64ca507d53e" alt="Screenshot 2" width="45%" />
+  <img src="https://github.com/user-attachments/assets/f645e07d-46fe-4d12-8797-d404a503c340" alt="Screenshot 2" width="45%" />
 </p>
 
 <p align="center">
-  <img src="src/3wa.jpg" alt="Screenshot 3" width="45%" />
-  <img src="src/4wa.jpg" alt="Screenshot 4" width="45%" />
+  <img src="https://github.com/user-attachments/assets/d4311c45-05be-40df-94fd-e64ca507d53e" alt="Screenshot 3" width="45%" />
+  <img src="https://github.com/user-attachments/assets/c7b4aa71-796d-4eae-a2ad-a02492a573d5" alt="Screenshot 4" width="45%" />
 </p>
 
 <p align="center">
-  <img src="src/5wa.jpg" alt="Screenshot 5" width="45%" />
+  <img src="https://github.com/user-attachments/assets/a3e8cf52-546d-4910-b447-c55a01de8532" alt="Screenshot 5" width="45%" />
 </p>
 
 ---
